@@ -1,12 +1,20 @@
 #include <iostream>
+#include <windows.h>
+HANDLE color=GetStdHandle(STD_OUTPUT_HANDLE);
 using namespace std;
-float f,k,c;
+
 int main()
 {
-    cout<<"Przelicznik stopni"<<endl;
-    cout<<"Podaj temperature w stopniach Fahrenheita: ";
-    cin>>f;
-    c=(5.0/9.0)*(f-32); k=c+273.15;
-    cout<<f<<" stopni Fahrenheita to "<<c<<" stopni Celsjusza oraz "<<k<<" Kelvinow"<<endl;
-    return 0;
+    SetConsoleTextAttribute(color,12); cout<<"--- Przelicznik stopni ---\n";
+    SetConsoleTextAttribute(color,13); cout<<" Made by @AndreansxTech on Github\n";
+    float f,k,c;
+    char wybor;
+    cout<<"Wybierz w jakich stopniach chcesz wprowadzic wartosc (C- Celsjusza, F- Fahrenheita, K- Kelwiny): ";
+    cin>>wybor;
+    switch (wybor)
+    {
+    case 'c':
+    case 'C':
+
+    }
 }
