@@ -14,23 +14,33 @@ void wypisanie_wyniku()
 {
     SetConsoleTextAttribute(color,11);
 }
-void linia()
+void logo()
 {
-    int linijka;
-    SetConsoleTextAttribute(color,11);
-    while (linijka<40)
+    SetConsoleTextAttribute(color,12);
+    cout<<R"(
+     ___            _ _            _ _
+    | _ \_ _ ______| (_)__ ____ _ (_) |__
+    |  _/ '_|_ / -_) | / _|_ / ' \| | / /
+    |_| |_| /__\___|_|_\__/__|_||_|_|_\_\
+
+        _                 _
+     __| |_ ___ _ __ _ _ (_)
+    (_-<  _/ _ \ '_ \ ' \| |
+    /__/\__\___/ .__/_||_|_|
+                |_|                         )";
+    cout<<"\n Zbudowany przez @AndreansxTech na Github\n";
+    int linia=0;
+    while (linia<40)
     {
-        cout<<"-"; Sleep(30);
-        linijka+=1;
+        cout<<"_"; Sleep(5);
+        linia+=1;
     }
     cout<<"\n";
 }
 
 int main()
 {
-
-    SetConsoleTextAttribute(color,12); cout<<"--- Przelicznik stopni ---\n";
-    SetConsoleTextAttribute(color,13); cout<<" Made by @AndreansxTech on Github\n"; linia();
+    logo();
     double k,f,c=0.0;
     char wybor;
 
