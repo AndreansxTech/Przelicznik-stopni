@@ -10,29 +10,28 @@ void informacja()
     SetConsoleTextAttribute(color,12); cout<<"!";
     SetConsoleTextAttribute(color,14); cout<<"]";
 }
-void wypisanie_wyniku()
-{
-    SetConsoleTextAttribute(color,11);
-}
 void logo()
 {
-    SetConsoleTextAttribute(color,12);
+    SetConsoleTextAttribute(color,9);
     cout<<R"(
-     ___            _ _            _ _
-    | _ \_ _ ______| (_)__ ____ _ (_) |__
-    |  _/ '_|_ / -_) | / _|_ / ' \| | / /
-    |_| |_| /__\___|_|_\__/__|_||_|_|_\_\
+,------.                      ,--.,--.                     ,--.,--.
+|  .--. ',--.--.,-----. ,---. |  |`--' ,---.,-----.,--,--, `--'|  |,-.
+|  '--' ||  .--'`-.  / | .-. :|  |,--.| .--'`-.  / |      \,--.|     /
+|  | --' |  |    /  `-.\   --.|  ||  |\ `--. /  `-.|  ||  ||  ||  \  \
+`--'     `--'   `-----' `----'`--'`--' `---'`-----'`--''--'`--'`--'`--'
 
-        _                 _
-     __| |_ ___ _ __ _ _ (_)
-    (_-<  _/ _ \ '_ \ ' \| |
-    /__/\__\___/ .__/_||_|_|
-                |_|                         )";
+
+            ,--.                        ,--.               ,--.     ,--.
+     ,---.,-'  '-. ,---.  ,---. ,--,--, `--'    ,--.  ,--./    \   /   |
+    (  .-''-.  .-'| .-. || .-. ||      \,--.     \  `'  /|  ()  |  `|  |
+    .-'  `) |  |  ' '-' '| '-' '|  ||  ||  |      \    /  \    /.--.|  |
+    `----'  `--'   `---' |  |-' `--''--'`--'       `--'    `--' '--'`--'
+                         `--'                                               )";
     cout<<"\n Zbudowany przez @AndreansxTech na Github\n";
     int linia=0;
-    while (linia<40)
+    while (linia<50)
     {
-        cout<<"_"; Sleep(5);
+        cout<<"-"; Sleep(2);
         linia+=1;
     }
     cout<<"\n";
@@ -47,37 +46,40 @@ int main()
         while (true)
         {
         cout<<"\n";informacja();
-        cout<<" Wybierz w jakich stopniach chcesz wprowadzic wartosc\n"; wypisanie_wyniku();
+        cout<<" Wybierz w jakich stopniach chcesz wprowadzic wartosc\n"; SetConsoleTextAttribute(color,11);
         cout<<" (C- Celsjusza, F- Fahrenheita, K- Kelwiny / W aby wyjsc): ";cin>>wybor;cout<<"\n";
         switch (wybor)
         {
         case 'c':
         case 'C':
             informacja(); cout<<" Wybrales Celsjusze\n Wprowadz wartosc: "; cin>>c;
-            f=(2*(c-0.1*c))+32; k=c+273.15; wypisanie_wyniku(); cout<<"\n";
+            f=(2*(c-0.1*c))+32; k=c+273.15; SetConsoleTextAttribute(color,11); cout<<"\n";
             cout<<c<<" stopni Celsjusza to:\n"<<f<<" stopni Fahrenheita\n"<<k<<" Kelwinow\n";
             break;
         case 'F':
         case 'f':
             informacja(); cout<<" Wybrales Fahrenheity\n Wprowadz wartosc: "; cin>>f;
-            c=(5.0/9.0)*(f-32); k=(c+273.15);cout<<"\n";wypisanie_wyniku();
+            c=(5.0/9.0)*(f-32); k=(c+273.15);cout<<"\n";SetConsoleTextAttribute(color,11);
             cout<<f<<" stopni fahrenheita to:\n"<<c<<" stopni Celsjusza\n"<<k<<" Kelwinow\n";
             break;
         case 'K':
         case 'k':
             informacja(); cout<<" Wybrales Kelwiny\n Wprowadz wartosc: ";cin>>k;
+            c=k-273.15; f=f=(2*(c-0.1*c))+32;cout<<"\n"; SetConsoleTextAttribute(color,11);
+            cout<<k<<" Kelwinow to: \n"<<c<<" stopni Celsjusza\n"<<f<<" stopni Fahrenheita\n";
             break;
         case 'W':
         case 'w':
             informacja();cout<<" Opuszczasz program";
             int kropki;
-            while (kropki<6)
+            while (kropki<10)
             {
-                cout<<"."; Sleep(200); kropki+=1;
+                SetConsoleTextAttribute(color,kropki);
+                cout<<"."; Sleep(150); kropki+=1;
             }
             exit(0);
         default:
-            SetConsoleTextAttribute(color,12); cout<<"Nie ma takiej opcji\n";
+            SetConsoleTextAttribute(color,4); cout<<"Nie ma takiej opcji\n";
             break;
 
         }
