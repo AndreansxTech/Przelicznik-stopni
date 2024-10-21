@@ -1,4 +1,7 @@
-# Przelicznik-stopni
+# Przelicznik-stopni</br>
+<img alt="Static Badge" src="https://img.shields.io/badge/Przelicznik-red">  <img alt="Static Badge" src="https://img.shields.io/badge/C%2B%2B-orange">
+
+
 ## Przelicznik stopni Celsjusza, Fahrenheita oraz Kelwina zbudowany w języku C++</br>
 ## Pamiętaj przeczytać całe README
 ![Zrzut ekranu 2024-10-07 203617](https://github.com/user-attachments/assets/b4f7605a-9746-427f-a333-65c29416bb9b)
